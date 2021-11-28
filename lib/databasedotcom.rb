@@ -1,3 +1,4 @@
+require 'active_support'
 require 'active_support/core_ext'
 
 require 'databasedotcom/version'
@@ -7,3 +8,4 @@ require 'databasedotcom/sales_force_error'
 require 'databasedotcom/collection'
 require 'databasedotcom/sobject'
 require 'databasedotcom/chatter'
+require 'databasedotcom/flow'
