@@ -333,9 +333,7 @@ module Databasedotcom
       private
 
       def self.register_field( name, field )
-        public
         attr_accessor name.to_sym
-        private
         self.type_map[name] = {
           :type => field["type"],
           :label => field["label"],

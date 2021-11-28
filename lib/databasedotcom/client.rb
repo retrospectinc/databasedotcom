@@ -388,7 +388,7 @@ module Databasedotcom
     end
 
     def encode_path_with_params(path, parameters={})
-      [URI.escape(path), encode_parameters(parameters)].reject{|el| el.empty?}.join('?')
+      [URI.encode_www_form_component(path).gsub("%2F", "/"), encode_parameters(parameters)].reject{|el| el.empty?}.join('?')
     end
 
     def encode_parameters(parameters={})
@@ -401,7 +401,7 @@ module Databasedotcom
     end
 
     def uri_escape(str)
-      URI.escape(str.to_s, Regexp.new("[^#{URI::PATTERN::UNRESERVED}]"))
+      URI.encode_www_form_component(str.to_s)
     end
 
     def log_response(result)
